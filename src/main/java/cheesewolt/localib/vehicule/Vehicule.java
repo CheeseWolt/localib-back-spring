@@ -1,9 +1,6 @@
 package cheesewolt.localib.vehicule;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Vehicule {
@@ -11,10 +8,15 @@ public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
+    @Column(nullable = false)
     String marque;
+    @Column(nullable = false)
     String modele;
+    @Column(nullable = false, unique = true)
     String immatriculation;
+    @Column(nullable = false)
     String etat;
+    @Column(nullable = false)
     int prix;
     boolean disponible = true;
     String type;

@@ -11,14 +11,16 @@ public class Locataire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
+    @Column(nullable = false)
     String nom;
+    @Column(nullable = false)
     String prenom;
     @Temporal(TemporalType.DATE)
-    @Column(name = "date_naissance")
+    @Column(name = "date_naissance", nullable = false)
     Date date_naissance;
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     String email;
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     String telephone;
 
     public Locataire() {

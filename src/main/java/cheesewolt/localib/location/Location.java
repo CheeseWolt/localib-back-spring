@@ -14,10 +14,10 @@ public class Location {
     Integer id;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "date_debut")
+    @Column(name = "date_debut", nullable = false)
     Date date_debut;
     @Temporal(TemporalType.DATE)
-    @Column(name = "date_fin")
+    @Column(name = "date_fin", nullable = false)
     Date date_fin;
 
     @ManyToOne(cascade = CascadeType.MERGE, optional = false)
